@@ -1,0 +1,7 @@
+import 'package:flutter/material.dart';
+
+Color primaryColor = const Color(0XFF3ECFBE);
+
+//green shades
+Color lightGreen = const Color(0XFF9fe7c7);
+Color darkGreen = const Color(0XFF1c8656);
