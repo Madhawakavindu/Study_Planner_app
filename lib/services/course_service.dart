@@ -23,4 +23,18 @@ class CourseService {
       print('Error creating course: $error');
     }
   }
+
+  // get all courses as a stream list of Course
+  Stream<List<Course>> get courses {
+    try {
+      return courseCollection.snapshots().map((snapshot) {
+        return snapshot.docs
+            .map((doc) => Course.fromJSON(doc.data() as Map<String, dynamic>))
+            .toList();
+      });
+    } catch (error) {
+      print(error);
+      return Stream.empty();
+    }
+  }
 }
