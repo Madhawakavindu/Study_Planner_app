@@ -121,6 +121,11 @@ class MainPage extends StatelessWidget {
                                   fontSize: 12,
                                 ),
                               ),
+                              onTap: () {
+                                GoRouter.of(
+                                  context,
+                                ).push("/single-course", extra: course);
+                              },
                             ),
                           );
                         },
